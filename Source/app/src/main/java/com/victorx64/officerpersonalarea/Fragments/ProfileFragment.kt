@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.victorx64.officerpersonalarea.R
+import com.victorx64.officerpersonalarea.Retrofit.MinzdravUser
+import com.victorx64.officerpersonalarea.Retrofit.RetrofitSingletone
 
 class ProfileFragment: Fragment() {
     companion object {
@@ -21,5 +23,12 @@ class ProfileFragment: Fragment() {
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
+    }
+    fun SendNewUserDat() :MinzdravUser {
+val user: MinzdravUser = createUserBody()
+RetrofitSingletone.getInstance()
+    }
+    fun createUserBody() : MinzdravUser {
+
     }
 }
