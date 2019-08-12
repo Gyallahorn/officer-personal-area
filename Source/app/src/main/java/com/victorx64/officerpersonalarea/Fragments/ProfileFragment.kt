@@ -13,7 +13,6 @@ import com.victorx64.officerpersonalarea.R
 import com.victorx64.officerpersonalarea.Retrofit.MinzdravApi
 import kotlinx.android.synthetic.main.my_profile_fragment_layout.*
 import org.jetbrains.anko.support.v4.find
-import com.victorx64.officerpersonalarea.Retrofit.MinzdravUser as MinzdravUser1
 
 class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {

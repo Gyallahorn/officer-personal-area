@@ -1,5 +1,6 @@
 package com.victorx64.officerpersonalarea.Retrofit
 
+import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -10,11 +11,10 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface MinzdravApi {
-    @GET("api/user")
-    fun getUser(@Header("idtoken") idToken: String?): Call<MinzdravUser>
 
-    @POST("/api/user")
-    fun postUser(@Header("idToken") idToken: String?, @Body body: MinzdravUser): Call<MinzdravUser>
+    // @todo #37 implement api'es
+    @GET("/api/login")
+    fun Login(): Observable<Void>
 
 companion object Factory{
     fun sendUser(): MinzdravApi{

@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.victorx64.officerpersonalarea.DoctorsContent
-import com.victorx64.officerpersonalarea.MyDoctorRecyclerViewAdapter
+import com.victorx64.officerpersonalarea.DummyContent.DoctorsContent
+import com.victorx64.officerpersonalarea.Adapters.MyDoctorRecyclerViewAdapter
 import com.victorx64.officerpersonalarea.R
 /**
  * Code for Doctor Fragment

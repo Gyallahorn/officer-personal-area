@@ -1,4 +1,7 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.DummyContent
+
+import com.victorx64.officerpersonalarea.R
+
 /**
 *Content for DoctorsRecycleView
  */
@@ -16,7 +19,7 @@ object DoctorsContent {
 
     init {
         val name: String = "Иванов Иван Иванович"
-        val doctorItem = DoctorItem("1", name , R.drawable.doctor_image)
+        val doctorItem = DoctorItem("1", name, R.drawable.doctor_image)
         val doctorItem2 = DoctorItem("1", name, R.drawable.doctor_image)
         val doctorItem3 = DoctorItem("1", name, R.drawable.doctor_image)
         val doctorItem4 = DoctorItem("1", name, R.drawable.doctor_image)

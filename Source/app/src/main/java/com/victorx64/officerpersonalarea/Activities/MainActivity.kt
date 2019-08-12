@@ -1,18 +1,14 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.Activities
 
-import android.app.ActionBar
-import android.net.Uri
 import android.os.Bundle
-import android.view.MenuItem
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.viewpager.widget.ViewPager
 import com.example.healthyworker.DoctorsFragment
 import com.example.healthyworker.MyResearcheslFragment
 import com.example.healthyworker.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
+import com.victorx64.officerpersonalarea.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(){

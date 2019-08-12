@@ -1,4 +1,4 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.Adapters
 
 import android.os.Handler
 import android.view.LayoutInflater
@@ -12,8 +12,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthyworker.MyResearcheslFragment
-import com.victorx64.officerpersonalarea.MyDoctorRecyclerViewAdapter.ViewHolder.Companion.collapse
-import com.victorx64.officerpersonalarea.MyDoctorRecyclerViewAdapter.ViewHolder.Companion.expand
+import com.victorx64.officerpersonalarea.Adapters.MyDoctorRecyclerViewAdapter.ViewHolder.Companion.collapse
+import com.victorx64.officerpersonalarea.Adapters.MyDoctorRecyclerViewAdapter.ViewHolder.Companion.expand
+import com.victorx64.officerpersonalarea.R
+import com.victorx64.officerpersonalarea.DummyContent.ResearchesContent
 
 /**
  * something need to write
@@ -22,7 +24,7 @@ import com.victorx64.officerpersonalarea.MyDoctorRecyclerViewAdapter.ViewHolder.
 class MyResearchesRecyclerViewAdapter(private val mValues: List<ResearchesContent.ResearchItem>, private val mListener: MyResearcheslFragment.OnListFragmentInteractionListener?) : RecyclerView.Adapter<MyResearchesRecyclerViewAdapter.ViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyResearchesRecyclerViewAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.fragment_researches_item, parent, false)
         return ViewHolder(view)
@@ -32,7 +34,7 @@ class MyResearchesRecyclerViewAdapter(private val mValues: List<ResearchesConten
         return mValues.size
     }
 
-    override fun onBindViewHolder(holder: MyResearchesRecyclerViewAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mItem = mValues[position]
         holder.mTitle.text = mValues[position].title
         holder.mImage.setImageResource(mValues[position].imageUrl)

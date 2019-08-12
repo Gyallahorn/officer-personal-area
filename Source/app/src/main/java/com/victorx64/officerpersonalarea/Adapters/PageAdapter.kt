@@ -1,4 +1,4 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.Adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

@@ -1,4 +1,4 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.Activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,8 @@ import android.webkit.WebView
 import com.microsoft.appcenter.AppCenter;
 import com.microsoft.appcenter.analytics.Analytics;
 import com.microsoft.appcenter.crashes.Crashes;
-import kotlinx.android.synthetic.main.activity_login.*
+import com.victorx64.officerpersonalarea.R
+import com.victorx64.officerpersonalarea.WebAppInterface
 import kotlinx.android.synthetic.main.login_web_view.*
 
 // @todo #13 make login activity, get visual part from figma, add phone firebase authentication

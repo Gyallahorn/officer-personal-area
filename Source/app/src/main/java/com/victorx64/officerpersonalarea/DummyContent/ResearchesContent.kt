@@ -1,4 +1,6 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.DummyContent
+
+import com.victorx64.officerpersonalarea.R
 
 /**
  *Content for Research Content

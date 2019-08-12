@@ -1,4 +1,4 @@
-package com.victorx64.officerpersonalarea
+package com.victorx64.officerpersonalarea.Adapters
 
 import android.content.ContentValues.TAG
 import android.os.Handler
@@ -11,11 +11,13 @@ import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthyworker.DoctorsFragment
+import com.victorx64.officerpersonalarea.DummyContent.DoctorsContent
+import com.victorx64.officerpersonalarea.R
+
 /**
  *Doctor RecyclerView Code
  */
@@ -25,7 +27,7 @@ class MyDoctorRecyclerViewAdapter(private val mValues: List<DoctorsContent.Docto
         return mValues.size
     }
 
-    override fun onBindViewHolder(holder: MyDoctorRecyclerViewAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mItem = mValues[position]
         holder.mName.text = mValues[position].text
         holder.mImage.setImageResource(mValues[position].imageUrl)
@@ -35,7 +37,7 @@ class MyDoctorRecyclerViewAdapter(private val mValues: List<DoctorsContent.Docto
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyDoctorRecyclerViewAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
                 .inflate(R.layout.fragment_doctor_item, parent, false)
         return ViewHolder(view)

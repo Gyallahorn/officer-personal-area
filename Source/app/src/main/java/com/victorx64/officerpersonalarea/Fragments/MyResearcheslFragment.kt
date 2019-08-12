@@ -9,6 +9,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.victorx64.officerpersonalarea.*
+import com.victorx64.officerpersonalarea.Adapters.MyResearchesRecyclerViewAdapter
+import com.victorx64.officerpersonalarea.DummyContent.ResearchesContent
+
 /**
  *Researches fragment code
  */
@@ -47,7 +50,7 @@ class MyResearcheslFragment : Fragment(){
         } else {
             recyclerView.layoutManager = GridLayoutManager(context, mColumnCount)
         }
-        recyclerView.adapter = MyResearchesRecyclerViewAdapter(ResearchesContent.ITEMS,mListener = null)
+        recyclerView.adapter = MyResearchesRecyclerViewAdapter(ResearchesContent.ITEMS, mListener = null)
         return view
     }
     /**
