@@ -10,7 +10,7 @@ import com.microsoft.appcenter.crashes.Crashes;
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.login_web_view.*
 
-// @todo #13 make login activity, get visual part from figma, add phon firebase authentication
+// @todo #13 make login activity, get visual part from figma, add phone firebase authentication
 class LoginActivity : AppCompatActivity() {
 var myWebView : WebView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,19 +19,21 @@ var myWebView : WebView? = null
             Analytics::class.java, Crashes::class.java
         )
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-//        myWebView = findViewById(R.id.WebView)
-//        WebView.getSettings().setLoadWithOverviewMode(true);
-//        WebView.getSettings().setUseWideViewPort(true);
-//        WebView.settings.javaScriptEnabled = true
-//
-//        WebView.loadUrl("https://officer-persomal-area.web.app/")
+        setContentView(R.layout.login_web_view)
+        myWebView = findViewById(R.id.WebView)
+        WebView.settings.javaScriptEnabled = true
+        WebView.loadUrl("https://officer-persomal-area.web.app/")
+        WebView.getSettings().setLoadWithOverviewMode(true);
+        WebView.getSettings().setUseWideViewPort(true);
+        WebView.addJavascriptInterface(WebAppInterface(this), "Android")
+        val intent = Intent(this, MainActivity::class.java)
+                           startActivity(intent)
 
 
-        login_button.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+//        login_button.setOnClickListener{
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
 
 
     }

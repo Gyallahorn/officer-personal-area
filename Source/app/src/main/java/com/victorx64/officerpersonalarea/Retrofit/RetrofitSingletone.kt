@@ -29,40 +29,51 @@ class RetrofitSingletone private constructor() {
 
     }
 
-    private fun GetIdToken(idTokenCallBack: IdTokenCallBack) {
-        FirebaseAuth.getInstance().currentUser?.getIdToken(false)?.addOnSuccessListener { getTokenResult -> idTokenCallBack.onIdTokenBack(getTokenResult.token) }
-    }
-
-    fun GetUser(callback: Callback<MinzdravUser>) {
-        val idTokenCallBack = object : IdTokenCallBack {
-            override fun onIdTokenBack(idToken: String?) {
-                mRetrofit.create(MinzdravApi::class.java).getUser(idToken).enqueue(callback)
-            }
-        }
-        GetIdToken(idTokenCallBack)
-    }
-
-    companion object {
-
-        @Volatile
-        private var instance: RetrofitSingletone? = null
-
-        fun getInstance(): RetrofitSingletone {
-            var localInsance = instance
-            if (localInsance == null) {
-                synchronized(RetrofitSingletone::class.java) {
-                    localInsance = instance
-                    if (localInsance == null) {
-                        localInsance = RetrofitSingletone()
-                        instance = localInsance
-
-                    }
-                }
-
-            }
-            return localInsance as RetrofitSingletone
-        }
-
-        private val TAG = RetrofitSingletone.javaClass.simpleName
-    }
+//    private fun GetIdToken(idTokenCallBack: IdTokenCallBack) {
+//        FirebaseAuth.getInstance().currentUser?.getIdToken(false)?.addOnSuccessListener { getTokenResult -> idTokenCallBack.onIdTokenBack(getTokenResult.token) }
+//    }
+//
+//    fun GetUser(callback: Callback<MinzdravUser>) {
+//        val idTokenCallBack = object : IdTokenCallBack {
+//            override fun onIdTokenBack(idToken: String?) {
+//                mRetrofit.create(MinzdravApi::class.java).getUser(idToken).enqueue(callback)
+//            }
+//        }
+//        GetIdToken(idTokenCallBack)
+//    }
+//
+//    fun PostUser(callback: Callback<MinzdravUser>, user: MinzdravUser){
+//        val idTokenCallBack = object : IdTokenCallBack {
+//            override fun onIdTokenBack(idToken: String?) {
+//                if (idToken!=null){
+//                mRetrofit.create(MinzdravApi::class.java).postUser(idToken, user).enqueue(callback)
+//                 }
+//            }
+//        }
+//        GetIdToken(idTokenCallBack)
+//    }
+//
+//    companion object {
+//
+//        @Volatile
+//        private var instance: RetrofitSingletone? = null
+//
+//        fun getInstance(): RetrofitSingletone {
+//            var localInsance = instance
+//            if (localInsance == null) {
+//                synchronized(RetrofitSingletone::class.java) {
+//                    localInsance = instance
+//                    if (localInsance == null) {
+//                        localInsance = RetrofitSingletone()
+//                        instance = localInsance
+//
+//                    }
+//                }
+//
+//            }
+//            return localInsance as RetrofitSingletone
+//        }
+//
+//        private val TAG = RetrofitSingletone.javaClass.simpleName
+//    }
 }
